@@ -38,9 +38,9 @@ class Dev(Colaborador):
 
 print('\n -==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Squads Google Brasil-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-')
 print('Bem vindo ao sistema de cadastro de squads do Google Brasil! \n')
-        
+
+squads = []        
 while True:
-    squads = []
     nome_squad = input('\nNome da squad: ')
     nome_techlead = input('Nome do techlead da squad: ')
     fone_techlead = input('Telefone do techlead: ')
@@ -64,14 +64,14 @@ while True:
             break    
     
     option = input('\nDeseja adicionar mais uma squad [S/N]: ')
-    
-
-    for squad in squads:
-        print(f'/n......................................{squad.nome}......................................')
-        print(f'TeachLead: {squad.techlead.nome}')
-        print(f'.........Devs do squad.........')
-        for dev in squad.devs:
-            dev.exibir()
-        print(f'........................................{squad.nome}......................................')
+    if option in 'Nn':
+        for squad in squads:
+            print(f'/n......................................{squad.nome}......................................')
+            print(f'TeachLead: {squad.techlead.nome}')
+            print(f'.........Devs do squad.........')
+            for dev in squad.devs:
+                dev.exibir()
+            print(f'........................................{squad.nome}......................................')
+        break 
         
-    print('\n -==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Squads Google Brasil-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-')
+print('\n -==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Squads Google Brasil-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-')
